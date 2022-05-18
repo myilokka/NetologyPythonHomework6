@@ -40,11 +40,14 @@ class Student:
     def __le__(self, other):
         if isinstance(other, Student):
             if self.mean_grade() < other.mean_grade():
-                res = (f'У ученика {other.name} {other.surname} рейтинг выше, чем у ученика {self.name} {self.surname}')
+                print(f'У ученика {other.name} {other.surname} рейтинг выше, чем у ученика {self.name} {self.surname}')
+                res = self.mean_grade() <= other.mean_grade()
             elif self.mean_grade()==other.mean_grade():
-                res = (f'Рейтинг ученика {other.name} {other.surname} такой же, как у ученика {self.name} {self.surname}')
+                print(f'Рейтинг ученика {other.name} {other.surname} такой же, как у ученика {self.name} {self.surname}')
+                res = self.mean_grade() <= other.mean_grade()
             else:
-                res = (f'У ученика {other.name} {other.surname} рейтинг ниже, чем у ученика {self.name} {self.surname}')
+                print(f'У ученика {other.name} {other.surname} рейтинг ниже, чем у ученика {self.name} {self.surname}')
+                res = self.mean_grade() < other.mean_grade()
         else:
             res = 'Ошибка!'
         return res
@@ -79,11 +82,14 @@ class Lecturer(Mentor):
     def __le__(self, other):
         if isinstance(other, Lecturer):
             if self.mean_grade() < other.mean_grade():
-                res = (f'У лектора {other.name} {other.surname} рейтинг выше, чем у лектора {self.name} {self.surname}')
+                print(f'У лектора {other.name} {other.surname} рейтинг выше, чем у лектора {self.name} {self.surname}')
+                res = self.mean_grade() <= other.mean_grade()
             elif self.mean_grade()==other.mean_grade():
-                res = (f'Рейтинг лектора {other.name} {other.surname} такой же, как у лектора {self.name} {self.surname}')
+                print(f'Рейтинг лектора {other.name} {other.surname} такой же, как у лектора {self.name} {self.surname}')
+                res = self.mean_grade() <= other.mean_grade()
             else:
-                res = (f'У лектора {other.name} {other.surname} рейтинг ниже, чем у лектора {self.name} {self.surname}')
+                print (f'У лектора {other.name} {other.surname} рейтинг ниже, чем у лектора {self.name} {self.surname}')
+                res = self.mean_grade() < other.mean_grade()
         else:
             res = 'Ошибка!'
         return res
